@@ -10,6 +10,10 @@ const routes: Routes = [
     component: ShellComponent,
     children: [
       { path: "welcome", component: WelcomeComponent },
+      {
+        path: "products",
+        loadChildren: "./products/product.module#ProductModule"
+      },
       { path: "", pathMatch: "full", redirectTo: "welcome" }
     ]
   },
@@ -20,4 +24,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
